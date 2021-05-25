@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+
+<h1>Bank note Authentication </h1><br><br>
+
+
+
+<div class="login">
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict_note_authentication')}}"method="post">
+        <label for="fname">Variance:</label>
+    	<input type="text" name="Variance" required="required" />
+    	<label for="fname">Skewness:</label>
+        <input type="text" name="Skewness" required="required" />
+        <label for="fname">Curtosis:</label>
+		<input type="text" name="Curtosis" required="required"/>
+		<label for="lname">Entropy:</label>
+		<input type="text" name="Entropy" required="required"/>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+</body>
+</html>
+
